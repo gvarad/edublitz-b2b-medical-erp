@@ -1,0 +1,64 @@
+MongoDB 
+Host=edublitz.evlrqwl.mongodb.net
+URI=mongodb+srv://demo:redhat@edublitz.evlrqwl.mongodb.net/?appName=edublitz
+
+
+Docker File change in first line - user-service,product-service, orders-service
+FROM maven:3.9-eclipse-temurin-17 AS builder
+
+
+AWS Namerservers
+ns-1048.awsdns-03.org
+ns-466.awsdns-58.com
+ns-1721.awsdns-23.co.uk
+ns-762.awsdns-31.net
+
+Frontend build error
+root@ip-172-31-47-33:~/edublitz-b2b-medical-erp/frontend# npm run build
+
+> edublitz-medical-erp-frontend@1.0.0 build
+> tsc && vite build
+
+src/api/axios.ts:30:15 - error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+
+30   import.meta.env.VITE_USER_SERVICE_URL ?? '/api/user'
+                 ~~~
+
+src/api/axios.ts:34:15 - error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+
+34   import.meta.env.VITE_PRODUCT_SERVICE_URL ?? '/api/product'
+                 ~~~
+
+src/api/axios.ts:38:15 - error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+
+38   import.meta.env.VITE_ORDER_SERVICE_URL ?? '/api/order'
+                 ~~~
+
+src/components/layout/DashboardLayout.tsx:5:30 - error TS6133: 'Users' is declared but its value is never read.
+
+5   LogOut, Menu, X, Activity, Users
+                               ~~~~~
+
+src/pages/InventoryPage.tsx:2:10 - error TS6133: 'Boxes' is declared but its value is never read.
+
+2 import { Boxes, AlertTriangle, Clock, CheckCircle } from 'lucide-react'
+           ~~~~~
+
+src/pages/admin/AdminDashboard.tsx:2:10 - error TS6133: 'Users' is declared but its value is never read.
+
+2 import { Users, Package, ShoppingCart, TrendingUp, AlertTriangle, Clock } from 'lucide-react'
+           ~~~~~
+
+src/pages/admin/AdminDashboard.tsx:2:40 - error TS6133: 'TrendingUp' is declared but its value is never read.
+
+2 import { Users, Package, ShoppingCart, TrendingUp, AlertTriangle, Clock } from 'lucide-react'
+                                         ~~~~~~~~~~
+
+
+Found 7 errors in 4 files.
+
+Errors  Files
+     3  src/api/axios.ts:30
+     1  src/components/layout/DashboardLayout.tsx:5
+     1  src/pages/InventoryPage.tsx:2
+     2  src/pages/admin/AdminDashboard.tsx:2
